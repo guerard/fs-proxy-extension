@@ -2,3 +2,4 @@
 /src/**/*.js
 *.code-workspace
 /dist/
+/.vscode/
