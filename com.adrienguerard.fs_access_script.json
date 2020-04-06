@@ -1,0 +1,9 @@
+{
+    "name": "com.adrienguerard.fs_access_script",
+    "description": "FS access script",
+    "path": "/Users/adrienguerard/fs-proxy-extension/fs-access.js",
+    "type": "stdio",
+    "allowed_origins": [
+      "chrome-extension://fkhdgcdbcibpkdcpgmcfbfelnhfafkfo/"
+    ]
+  }

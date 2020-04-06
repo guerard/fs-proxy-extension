@@ -1,0 +1,20 @@
+{
+    "name": "Filesystem proxy extension",
+    "description": "Proxies filesystem calls as a companion extension for web apps.",
+    "version": "1.0",
+    "manifest_version": 2,
+    "background": {
+        "scripts": [
+            "dist/background_bundle.js"
+        ],
+        "persistent": false
+    },
+    "externally_connectable": {
+        "matches": [
+            "https://www.goool.futbol/*"
+        ]
+    },
+    "permissions": [
+        "nativeMessaging"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "fs-proxy-extension",
+  "version": "1.0.0",
+  "description": "Proxies filesystem requests for use as a companion to a web app.",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Adrien Guerard",
+  "license": "ISC",
+  "dependencies": {
+    "chrome-native-messaging": "^0.2.0",
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.0.103",
+    "@types/lodash": "^4.14.149",
+    "html-webpack-plugin": "^4.0.4",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}
