@@ -7,9 +7,9 @@ const NativeHostMessenger = require('native-host-messenger').NativeHostMessenger
 
 new NativeHostMessenger((msg, sendMessage) => {
     if (msg.writeFile) {
-        sendMessage({ newFileName: writeFile(msg.stringToWrite, msg.dir) })
+        sendMessage({ newFileName: writeFile(msg.stringToWrite, msg.dir) });
     } else {
-        sendMessage({ ...msg, echo: true })
+        sendMessage({ ...msg, echo: true });
     }
 });
 
