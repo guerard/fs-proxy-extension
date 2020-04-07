@@ -1,25 +1,17 @@
 #!/usr/bin/env node
 
-const nativeMessage = require('chrome-native-messaging');
 const fs = require('fs');
 const path = require('path');
+const NativeHostMessenger = require('native-host-messenger').NativeHostMessenger;
 
-process.stdin
-    .pipe(new nativeMessage.Input())
-    .pipe(new nativeMessage.Transform(function (msg, push, done) {
-        if (msg.writeFile) {
-            push({
-                newFileName: writeFile(msg.stringToWrite, msg.dir),
-            });
-            done();
-            return;
-        }
-        var reply = JSON.parse(JSON.stringify(msg));
-        push(reply);
-        done();
-    }))
-    .pipe(new nativeMessage.Output())
-    .pipe(process.stdout);
+
+new NativeHostMessenger((msg, sendMessage) => {
+    if (msg.writeFile) {
+        sendMessage({ newFileName: writeFile(msg.stringToWrite, msg.dir) })
+    } else {
+        sendMessage({ ...msg, echo: true })
+    }
+});
 
 
 function writeFile(stringToWrite, dir) {
